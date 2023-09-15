@@ -1,29 +1,29 @@
 version: '3'
 services:
-  devops:
-    image: rahamshaik/devopsreponit:latest
+  movies:
+    image: vinodvanama/projectmovies:latest
     ports:
-      - "90:80"
+      - "81:80"
     deploy:
       replicas: 3
 
-  aws:
-    image: rahamshaik/awsreponit:latest
+  train:
+    image: vinodvanama/projecttrain:latest
     ports:
-      - "91:80"
+      - "82:80"
     deploy:
       replicas: 3
 
-  datascience:
-    image: rahamshaik/datasciencereponit:latest
+  dth:
+    image: vinodvanama/projectdth:latest
     ports:
-      - "92:80"
+      - "83:80"
     deploy:
       replicas: 3
 
-  azure:
-    image: rahamshaik/azurereponit:latest
+  recharge:
+    image: vinodvanama/projectrecharge:latest
     ports:
-      - "93:80"
+      - "84:80"
     deploy:
       replicas: 3
