@@ -135,3 +135,33 @@ services:
       - "azurevol"
     deploy:
       replicas: 3
+
+DOCKER STACK:
+Docker stack is used to create multiple services on multiple hosts. i.e it will create multiple containers on multile servers with the help of compose file.
+To use the docker stack we have initialized docker swarm, if we are not using docker swarm, docker stack will not work.
+once we remove the stack automatically all the containers will gets deleted.
+We can share the containers from manager to worker according to the replicas
+Ex: Lets assume if we have 2 servers which is manager and worker, if we deployed a stack with 4 replicas. 2 are present in manager and 2 are present in worker.
+Here manager will divide the work based on the load on a server
+
+COMMAND:
+TO DEPLOY : docker stack deploy --compose-file docker-compose.yml stack_name
+TO LIST : docker stack ls
+TO GET CONTAINERS OF A STACK : docker stack ps stack_name
+TO GET SERVICES OF A STACK: docker stack services stack_name
+TO DELETE A STACK: docker stack rm stack_name
+
+
+PORTAINER:
+it is a container organizer, designed to make tasks easier, whether they are clustered or not. 
+abel to connect multiple clusters, access the containers, migrate stacks between clusters
+it is not a testing environment mainly used for production routines in large companies.
+Portainer consists of two elements, the Portainer Server and the Portainer Agent. 
+Both elements run as lightweight Docker containers on a Docker engine
+
+SETUP:
+Must have swarm mode and all ports enable with docker engine
+curl -L https://downloads.portainer.io/ce2-16/portainer-agent-stack.yml -o portainer-agent-stack.yml
+docker stack deploy -c portainer-agent-stack.yml portainer
+ docker ps
+public-ip of swamr master:9000
