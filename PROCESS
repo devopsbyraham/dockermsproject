@@ -61,34 +61,37 @@ INDEX.HTML:
 PIPELINE:
 
 pipeline {
-    agent any 
+    agent any
     
     stages {
         stage('checkout') {
             steps {
-                git 'https://github.com/RAHAMSHAIK007/dockernewproject.git'
+                git 'https://github.com/devopsbyraham/dockermsproject.git'
             }
         }
         stage('build') {
             steps {
-                sh 'docker build -t $img .'
+                sh 'docker build -t $image .'
             }
         }
         stage('tag') {
             steps {
-                sh 'docker tag $img $repo'
+                sh 'docker tag $image $repo'
             }
         }
         stage('push') {
             steps {
-                sh 'docker login -u  -p '
+                sh 'docker login -u rahamshaik -p $password'
                 sh 'docker push $repo'
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh 'docker stack deploy -c docker-compose.yml paytm'
             }
         }
     }
 }
-
-
 4. GIVE PERMISSIONS
 
 chmod 777 /var/run/docker.sock
