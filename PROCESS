@@ -15,7 +15,7 @@ CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
 
 DOCKER FILE	: To create image by automation.
 DOCKER COMPOSE	: To create multiple containers on single server.
-DOCKER SWARM	: To create multiple containers on Multiple server.
+DOCKER SWARM	: To create single containers on Multiple server.
 DOCKE STACK	: Docker swarm + Docker compose
 
 1. CREATE 3 SERVERS AND INSTALL DOCKER ON ALL OF THEM & CREATE CLUSTER OF IT
