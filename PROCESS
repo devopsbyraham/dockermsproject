@@ -18,7 +18,7 @@ DOCKER COMPOSE	: To create multiple containers on single server.
 DOCKER SWARM	: To create single containers on Multiple server.
 DOCKE STACK	: Docker swarm + Docker compose
 
-1. CREATE 3 SERVERS AND INSTALL DOCKER ON ALL OF THEM & CREATE CLUSTER OF IT
+1. CREATE 3 SERVERS T2.MEDIUM AND INSTALL DOCKER ON ALL OF THEM & CREATE CLUSTER OF IT
 
 yum install docker -y
 systemctl start docker
