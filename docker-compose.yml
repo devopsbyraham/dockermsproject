@@ -2,25 +2,25 @@
 version: "3.8"
 services:
   movies:
-    image: radhikasn458/movies:latest
+    image: anitalluri00/moviesrepo:latest
     ports:
       - 81:80
     deploy:
       replicas: 3
   train:
-    image: radhikasn458/train:latest
+    image: anitalluri00/trainrepo:latest
     ports:
       - 82:80
     deploy:
       replicas: 3
   dth:
-    image: radhikasn458/dth:latest
+    image: anitalluri00/dthrepo:latest
     ports:
       - 83:80
     deploy:
       replicas: 3
   recharge:
-    image: radhikasn458/recharge:latest
+    image: anitalluri00/rechargerepo:latest
     ports:
       - 84:80
     deploy:
