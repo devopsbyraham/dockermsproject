@@ -1,34 +1,35 @@
-version: '3.8'
+---
+version: "3.8"
 services:
   movies:
-    image: siraj321/paytmmovies:latest
+    image: rahamshaik/moviesrepo:latest
     ports:
-      - "81:80"
+      - 81:80
     deploy:
       replicas: 3
     volumes:
-      - "movies"
+      - movies
   train:
-    image: siraj321/paytmtrain:latest
+    image: rahamshaik/trainrepo:latest
     ports:
-      - "82:80"
+      - 82:80
     deploy:
       replicas: 3
     volumes:
-      - "train"
+      - train
   dth:
-    image: siraj321/paytmdth:latest
+    image: rahamshaik/dthrepo:latest
     ports:
-      - "83:80"
+      - 83:80
     deploy:
       replicas: 3
     volumes:
-      - "dth"
+      - dth
   recharge:
-    image: siraj321/paytmrecharge:latest
+    image: rahamshaik/rechargerepo:latest
     ports:
-      - "84:80"
+      - 84:80
     deploy:
       replicas: 3
     volumes:
-      - "recharge"
+      - recharge
