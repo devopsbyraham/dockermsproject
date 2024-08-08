@@ -8,7 +8,7 @@ services:
     deploy:
       replicas: 3
     volumes:
-      - movies
+      - "movies"
   train:
     image: rahamshaik/trainrepo:latest
     ports:
@@ -16,7 +16,7 @@ services:
     deploy:
       replicas: 3
     volumes:
-      - train
+      - "train"
   dth:
     image: rahamshaik/dthrepo:latest
     ports:
@@ -24,7 +24,7 @@ services:
     deploy:
       replicas: 3
     volumes:
-      - dth
+      - "dth"
   recharge:
     image: rahamshaik/rechargerepo:latest
     ports:
@@ -32,4 +32,4 @@ services:
     deploy:
       replicas: 3
     volumes:
-      - recharge
+      - "recharge"
