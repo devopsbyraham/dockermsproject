@@ -7,29 +7,25 @@ services:
       - 81:80
     deploy:
       replicas: 3
-    volumes:
-      - "movies"
+  
   train:
     image: rahamshaik/trainrepo:latest
     ports:
       - 82:80
     deploy:
       replicas: 3
-    volumes:
-      - "train"
+    
   dth:
     image: rahamshaik/dthrepo:latest
     ports:
       - 83:80
     deploy:
       replicas: 3
-    volumes:
-      - "dth"
+    
   recharge:
     image: rahamshaik/rechargerepo:latest
     ports:
       - 84:80
     deploy:
       replicas: 3
-    volumes:
-      - "recharge"
+   
