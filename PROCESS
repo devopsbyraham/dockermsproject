@@ -79,6 +79,11 @@ pipeline {
                 sh 'docker tag $image $repo'
             }
         }
+        stage('trivy') {
+            steps {
+                  sh 'trivy fs . > trivyfs.txt'
+            }
+        }
         stage('push') {
             steps {
                 sh 'docker login -u rahamshaik -p $password'
@@ -92,6 +97,8 @@ pipeline {
         }
     }
 }
+
+
 4. GIVE PERMISSIONS
 
 chmod 777 /var/run/docker.sock
