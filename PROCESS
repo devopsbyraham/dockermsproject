@@ -45,6 +45,14 @@ update-alternatives --config java
 systemctl start jenkins.service
 systemctl status jenkins.service
 
+TRIVY INSTALLATION:
+wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.tar.gz
+tar zxvf trivy_0.18.3_Linux-64bit.tar.gz
+sudo mv trivy /usr/local/bin/
+vim .bashrc
+export PATH=$PATH:/usr/local/bin/
+source .bashrc 
+
 
 3. CREATE CUSTOM IMAGES AND PUSH TO DOCKERHUB WITH TAGS
 
@@ -54,6 +62,7 @@ RUN apt-get update -y
 RUN apt-get install apache2 -y
 COPY index.html /var/www/html/
 CMD ["/usr/sbin/apachectl", "-D", "FOREGROUND"]
+
 
 INDEX.HTML:
 
